@@ -8,7 +8,7 @@ The CMake Debug and Release builds each passed 19 cases and 6307 checks. Each bu
 
 The Python build helper was also exercised successfully. The CMake 3.22.1 / Ninja runs used an external compiler wrapper and explicit LLVM archive tools; those machine specific files are not repository content. The snapshot test copies object bytes explicitly so its comparison does not depend on whether structure assignment preserves padding. The forwarding core itself was unchanged during publication preparation.
 
-The installed MSVC toolchain could not complete a build because its C runtime SDK headers were missing. The MSVC path in the build helper remains unverified on a complete installation. Linux, macOS, and sanitizer runs have not been performed.
+The installed MSVC toolchain could not complete a build because its C runtime SDK headers were missing. The MSVC path in the build helper remains unverified on a complete installation. macOS and sanitizer runs have not been performed. Linux results are recorded below.
 
 ## Continuous integration
 
@@ -16,7 +16,7 @@ The [workflow](../.github/workflows/ci.yml) defines GCC and Clang jobs on Ubuntu
 
 The workflow passed local validation with actionlint 1.7.12. Its checkout action is pinned to a reviewed commit, uses only read access, and does not persist credentials. No private deployment secrets are required.
 
-GitHub Actions has not run yet. Local Windows results do not establish that either Linux CI job passed. Hosted CI and hardware validation remain separate checks.
+On 20 October 2026, the first [GitHub Actions run](https://github.com/darkimorta5/stm32-ssh-uart-gateway/actions/runs/39332333311) passed for commit `eb013f84458a06db17af7f9bfd6ab657a2c1d645`. Both GCC and Clang jobs built the project and passed both CTest entries on Ubuntu. These are host results, not STM32 hardware validation.
 
 ## What the C tests cover
 
